@@ -1,0 +1,70 @@
+/*
+@Author: ThemeMascot
+@URL: http://ThemeMascot.com
+
+This is the file where you can add your custom styles to change the look of the
+theme. But don't modify style-main.css file.
+
+*/
+
+/* Your custom css codes start here: */
+.slider_wrapper {
+    background-image: url('/assets/images/portada_dr_jose.png');
+    width: 100%;
+    height: 550px;
+    /* background-image: linear-gradient(#005593, #005593); */
+    background-color: #528ab3;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+    display: flex;
+    align-items: center;
+}
+
+.slider-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    height: 100%;
+    width: 40%;
+    margin-left: 20%;
+}
+
+.slider-text-secondary {
+    padding: 0.3rem;
+    font-size: 2rem;
+    background-color: rgba(6, 6, 58, 0.5);
+}
+
+.slider-text-primary {
+    background-color: #cc3031;
+    padding: 0.3rem;
+    font-size: 3rem;
+}
+
+.slider-text-description {
+    font-size: 1.2rem;
+}
+
+.text-primary {
+    color: #005593;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-bold {
+    font-weight: bolder;
+}
+
+.border-10px {
+    /* border-color: rgba(7, 7, 160, 0.5) !important; */
+}
+
+.divider {
+    background-color: #005593;
+    color: white;
+}

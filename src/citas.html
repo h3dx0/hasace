@@ -1,0 +1,240 @@
+---
+layout: "base.njk"
+---
+<!-- Start main-content -->
+<div class="main-content">
+
+  <!-- Start main-content -->
+  <div class="main-content">
+    <!-- Section: Have Any Question -->
+    <section class="divider">
+      <div class="container pt-90 pb-50">
+        <div class="section-title mb-60">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="esc-heading small-border text-center">
+                <h3>Have any Questions?</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div class="row">
+            <div class="col-sm-12 col-md-4">
+              <div class="contact-info text-center">
+                <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
+                <h4>Call Us</h4>
+                <h6 class="text-gray">Phone: +262 695 2601</h6>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <div class="contact-info text-center">
+                <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
+                <h4>Address</h4>
+                <h6 class="text-gray">121 King Street, Australia</h6>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <div class="contact-info text-center">
+                <i class="fa fa-envelope font-36 mb-10 text-theme-colored"></i>
+                <h4>Email</h4>
+                <h6 class="text-gray">you@yourdomain.com</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider: Contact -->
+    <section class="divider bg-lighter">
+      <div class="container">
+        <div class="row pt-30">
+          <div class="col-md-7">
+            <h3 class="line-bottom mt-0 mb-30">Interested in discussing?</h3>
+
+            <!-- Contact Form -->
+            <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Name <small>*</small></label>
+                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Email <small>*</small></label>
+                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Subject <small>*</small></label>
+                    <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Message</label>
+                <textarea name="form_message" class="form-control required" rows="5"
+                  placeholder="Enter Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                <button type="submit" class="btn btn-dark btn-theme-colored btn-flat"
+                  data-loading-text="Please wait...">Send your message</button>
+              </div>
+            </form>
+            <!-- Contact Form Validation-->
+            <script type="text/javascript">
+              $("#contact_form").validate({
+                submitHandler: function (form) {
+                  var form_btn = $(form).find('button[type="submit"]');
+                  var form_result_div = '#form-result';
+                  $(form_result_div).remove();
+                  form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                  var form_btn_old_msg = form_btn.html();
+                  form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                  $(form).ajaxSubmit({
+                    dataType: 'json',
+                    success: function (data) {
+                      if (data.status == 'true') {
+                        $(form).find('.form-control').val('');
+                      }
+                      form_btn.prop('disabled', false).html(form_btn_old_msg);
+                      $(form_result_div).html(data.message).fadeIn('slow');
+                      setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
+                    }
+                  });
+                }
+              });
+            </script>
+
+          </div>
+          <div class="col-md-5">
+
+            <!-- Google Map HTML Codes -->
+            <div id="map-canvas-multipointer" data-mapstyle="default" data-height="500" data-zoom="12"
+              data-marker="images/map-marker.png">
+            </div>
+            <!-- Google Map Javascript Codes -->
+            <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWE4mHmR9GyPsHSOVZrSCOOljk8DU9B4"></script>
+            <script src="js/google-map-init-multilocation.js"></script>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- end main-content -->
+
+  <!-- Footer -->
+  <footer id="footer" class="footer pb-0 bg-black-111">
+    <div class="container pb-20">
+      <div class="row multi-row-clearfix">
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark"> <img alt="" src="images/logo-wide-white.png">
+            <p class="font-12 mt-20 mb-10">Medinova is a library of Crowdfunding and Medinova templates with predefined
+              elements which helps you to build your own site. Lorem ipsum dolor sit amet consectetur.</p>
+            <a class="text-gray font-12" href="#"><i class="fa fa-angle-double-right text-theme-colored"></i> Read
+              more</a>
+            <ul class="social-icons icon-dark mt-20">
+              <li><a href="#" data-bg-color="#3B5998"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#" data-bg-color="#02B0E8"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#" data-bg-color="#05A7E3"><i class="fa fa-skype"></i></a></li>
+              <li><a href="#" data-bg-color="#A11312"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#" data-bg-color="#C22E2A"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark">
+            <h5 class="widget-title line-bottom">Pages</h5>
+            <ul class="list-border list theme-colored angle-double-right">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Donor Privacy Policy</a></li>
+              <li><a href="#">Disclaimer</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Copyright Notice</a></li>
+              <li><a href="#">Media Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark">
+            <h5 class="widget-title line-bottom">Quick Links</h5>
+            <ul class="list-border list theme-colored angle-double-right">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Donor Privacy Policy</a></li>
+              <li><a href="#">Disclaimer</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Copyright Notice</a></li>
+              <li><a href="#">Media Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="widget dark">
+            <h5 class="widget-title line-bottom">Quick Contact</h5>
+            <ul class="list list-border">
+              <li><a href="#">+(012) 345 6789</a></li>
+              <li><a href="#">hello@yourdomain.com</a></li>
+              <li><a href="#" class="lineheight-20">121 King Street, Melbourne Victoria 3000, Australia</a></li>
+            </ul>
+            <p class="text-white mb-5 mt-15">Subscribe to our newsletter</p>
+            <form id="footer-mailchimp-subscription-form" class="newsletter-form mt-10">
+              <label class="display-block" for="mce-EMAIL"></label>
+              <div class="input-group">
+                <input type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control"
+                  data-height="37px" id="mce-EMAIL">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-colored btn-theme-colored m-0"><i
+                      class="fa fa-paper-plane-o text-white"></i></button>
+                </span>
+              </div>
+            </form>
+            <!-- Mailchimp Subscription Form Validation-->
+            <script type="text/javascript">
+              $('#footer-mailchimp-subscription-form').ajaxChimp({
+                callback: mailChimpCallBack,
+                url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+              });
+
+              function mailChimpCallBack(resp) {
+                // Hide any previous response text
+                var $mailchimpform = $('#footer-mailchimp-subscription-form'),
+                  $response = '';
+                $mailchimpform.children(".alert").remove();
+                console.log(resp);
+                if (resp.result === 'success') {
+                  $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                } else if (resp.result === 'error') {
+                  $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                }
+                $mailchimpform.prepend($response);
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-nav bg-black-222 p-20">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <p class="text-white font-11 m-0">Copyright &copy;2015 ThemeMascot. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+<!-- end wrapper -->

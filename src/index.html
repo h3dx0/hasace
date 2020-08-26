@@ -1,0 +1,689 @@
+---
+layout: "base.njk"
+---
+
+<!-- Start main-content -->
+<div class="main-content">
+  <!-- Section: home -->
+  <section id="home" class="divider">
+    <div class="container-fluid p-0">
+
+      <div class="slider_wrapper">
+        <picture>
+          <source media="(max-width: 799px)" srcset="http://placehold.it/800x300">
+          <source media="(max-width: 1024px)" srcset="http://placehold.it/1024x300">
+          <!-- <img src="/assets/images/portada_dr_jose.jpg" width="1920" height="550" alt="Rehabilitacion"
+            aria-label="Clinica de rehabilitacion fisica"> -->
+        </picture>
+        <div class="slider-titles">
+          <p class="text-white slider-text-secondary">Medicina del Deporte en Querétaro.</p>
+          <p class="text-white slider-text-primary">Medicina Física y Rehabilitación.</p>
+          <p class="text-white slider-text-description">
+            ¿Sientes dolor en tus articulaciones?
+            ¿Eres deportista y tienes una lesión que no logras sanar?
+          </p>
+          <button class="btn btn-dark btn-theme-colored mt-15">Ver detalles</button>
+        </div>
+
+      </div>
+      <!-- end .rev_slider_wrapper -->
+
+      <!-- Slider Ends -->
+
+    </div>
+  </section>
+
+  <!-- Section: Welcome -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 wow fadeInLeft animation-delay4">
+          <div class="border-10px p-30">
+            <h5><i class="fa fa-clock-o text-theme-colored"></i> Horario </h5>
+            <div class="opening-hourse text-left">
+              <ul class="list-unstyled">
+                <li class="clearfix line-height-1"> <span> Lunes - Sábado </span>
+                  <div class="value"> 8:00am - 9:00pm </div>
+                </li>
+                <li class="clearfix line-height-1"> <span> Domingo </span>
+                  <div class="value"> Previa cita </div>
+                </li>
+                <li class="clearfix line-height-1"> <span> Urgencias </span>
+                  <div class="value"> 24hr </div>
+                </li>
+              </ul>
+            </div>
+            <h5 class="mt-30"><i class="fa fa-pencil-square-o text-theme-colored"></i> Necesitas ayuda?</h5>
+            <p class="mt-0 text-uppercase">haz tu cita y nuestros expertos te atenderán</p>
+            <a href="#" class="btn btn-dark btn-theme-colored mt-15" data-toggle="modal"
+              data-target="#modal_appontment_form_at_about">Pedir Cita</a>
+
+            <!-- Modal - Appontment Form Starts -->
+            <div class="modal fade" id="modal_appontment_form_at_about" tabindex="-1" role="dialog"
+              aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="border-1px p-25">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="text-theme-colored text-uppercase m-0">Make an Appointment</h4>
+                    <div class="line-bottom mb-30"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                    <!-- Appointment Form -->
+                    <form id="appointment_form_at_home" name="appointment_form_at_home" class="" method="post"
+                      action="includes/appointment.php">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="form-group mb-10">
+                            <input id="form_name" name="form_name" class="form-control" type="text" required=""
+                              placeholder="Enter Name" aria-required="true">
+                          </div>
+                        </div>
+                        <div class="col-sm-12">
+                          <div class="form-group mb-10">
+                            <input id="form_email" name="form_email" class="form-control required email" type="email"
+                              placeholder="Enter Email" aria-required="true">
+                          </div>
+                        </div>
+                        <div class="col-sm-12">
+                          <div class="form-group mb-10">
+                            <input name="form_appontment_date" class="form-control required datetime-picker" type="text"
+                              placeholder="Appoinment Date & Time" aria-required="true">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group mb-10">
+                        <textarea id="form_message" name="form_message" class="form-control required"
+                          placeholder="Enter Message" rows="5" aria-required="true"></textarea>
+                      </div>
+                      <div class="form-group mb-0 mt-20">
+                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                        <button type="submit" class="btn btn-dark btn-theme-colored"
+                          data-loading-text="Please wait...">Send Message</button>
+                      </div>
+                    </form>
+
+                    <!-- Appointment Form Validation-->
+                    <script type="text/javascript">
+                      $("#appointment_form_at_home").validate({
+                        submitHandler: function (form) {
+                          var form_btn = $(form).find('button[type="submit"]');
+                          var form_result_div = '#form-result';
+                          $(form_result_div).remove();
+                          form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                          var form_btn_old_msg = form_btn.html();
+                          form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                          $(form).ajaxSubmit({
+                            dataType: 'json',
+                            success: function (data) {
+                              if (data.status == 'true') {
+                                $(form).find('.form-control').val('');
+                              }
+                              form_btn.prop('disabled', false).html(form_btn_old_msg);
+                              $(form_result_div).html(data.message).fadeIn('slow');
+                              setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
+                            }
+                          });
+                        }
+                      });
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal - Appontment Form Ends -->
+          </div>
+        </div>
+        <div class="col-md-4 wow fadeInUp animation-delay4">
+          <h3 class="text-primary font-playfair mt-10 mt-sm-30 mb-0">Sobre</h3>
+          <h1 class="text-primary mt-0">HASACE</h1>
+          <p class="text-bold"><em>Medicina Física y Rehabilitación.</em>
+          </p>
+          <p class="mt-20">Habana Salud Center es una institución médica especializada donde trabajan profesionales de
+            la salud graduados en La
+            Habana, Cuba, en diferentes disciplinas o especialidades de la salud pública tales como Medicina del
+            Deporte, Medicina
+            de la Salud, Medicina General Integral, Traumatología y Ortopedia, capacitados para atender diferentes
+            enfermedades,
+            lesiones y urgencias médicas entre otras acciones de salud.</p>
+          <a href="/quienes-somos" class="btn btn-primary btn-lg mt-15 mb-md-30">Quiero saber más</a>
+        </div>
+        <div class="col-md-4 wow fadeInRight animation-delay4">
+          <img src="/assets/images/dr_jose_ines.png" alt="DrJoseInes">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Services -->
+  <section class="bg-lighter text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 wow fadeInLeft animation-delay1">
+          <h4 class="font-playfair text-uppercase mt-0 text-white">Nuestros Servicios</h4>
+          <p>Prevenimos, diagnosticamos y tratamos un amplio rango de condiciones que afectan diversos aspectos del
+            funcionamiento
+            físico y cognitivo: dolor de cuello, espalda, hombro, rodilla, tobillo, espolón calcáneo, cadera, fracturas,
+            lesiones de
+            menisco, lumbalgia, rehabilitación neurológica, lesiones deportivas, bursitis, lesiones medulares,
+            hemiplejia, parálisis
+            facial, artritis reumatoidea, úlcera de pie diabético, escaras, rehabilitación post-quirúrgica, entre otras.
+          </p>
+          <div class="row mt-20 mb-sm-30">
+            <div class="col-sm-6">
+              <div class="service-icon-box"> <a href="#" class="pull-left mr-20"><i class="icon-ambulance14"></i></a>
+                <div class="mt-5">
+                  <h6 class="mt-5 text-white">URGENCIAS</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="service-icon-box"> <a href="#" class="pull-left mr-20"><i class="icon-illness"></i></a>
+                <div class="">
+                  <h6 class="mt-5 text-white">REHABILITACIÓN FÍSICA</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="service-icon-box"> <a href="#" class="pull-left mr-20"><i class="icon-stethoscope10"></i></a>
+                <div class="">
+                  <h6 class="mt-5 text-white">REHABILITACIÓN POST-QUIRÚRGICA</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="service-icon-box"> <a href="#" class="pull-left mr-20"><i class="icon-medical51"></i></a>
+                <div class="">
+                  <h6 class="mt-5 text-white">FISIOTERAPIA MUSCULAR</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="service-icon-box"> <a href="#" class="pull-left mr-20"><i class="icon-hospital35"></i></a>
+                <div class="">
+                  <h6 class="mt-5 text-white">FISIOTERAPIA NEUROLÓGICA</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="service-icon-box"> <a href="#" class="pull-left mr-20"><i class="icon-tablets9"></i></a>
+                <div class="">
+                  <h6 class="mt-5 text-white">KINESIOTERAPIA</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="thumb">
+            <img alt="" src="/assets/images/rehabilitacion_fisica_en_queretaro.png" class="img-fullwidth">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Specialities -->
+  <section data-bg-img="images/pattern/p4.png">
+    <div class="container pb-80">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="text-uppercase mt-0">Nuestras especialidades</h2>
+            <div class="title-icon">
+              <img class="mb-10" src="images/title-icon.png" alt="">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+          </div>
+        </div>
+      </div>
+      <div class="section-centent">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="services-tab border-10px bg-white-light">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab11" data-toggle="tab"><i class="icon-xray2"></i>REHABILITACIÓN
+                    FÍSICA</a></li>
+                <li><a href="#tab12" data-toggle="tab"><i class="icon-heart36"></i>REHABILITACIÓN POST-QUIRÚRGICA</a>
+                </li>
+                <li><a href="#tab13" data-toggle="tab"><i class="icon-brain9"></i>FISIOTERAPIA MUSCULAR</a></li>
+                <li><a href="#tab14" data-toggle="tab"><i class="icon-teeth1"></i>FISIOTERAPIA NEUROLÓGICA</a></li>
+                <li><a href="#tab15" data-toggle="tab"><i class="icon-hospital35"></i>KINESIOTERAPIA</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="tab11">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="service-content">
+                        <h3 class="sub-title mb-0 mt-0">Servicio</h3>
+                        <h1 class="title mt-0">REHABILITACIÓN</h1>
+                        <p>Habana Salud Center entiende la importancia de ofrecer el servicio de Rehabilitación a la
+                          población Queretana y de otros
+                          estados de la República Mexicana, ya que su objetivo es que las personas con algún
+                          padecimiento o discapacidad alcancen
+                          y mantengan un nivel óptimo de desempeño físico, sensorial, psicológico y/o social,
+                          manteniendo una adecuada calidad de
+                          vida.</p>
+                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una Cita</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab12">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="service-content">
+                        <h3 class="sub-title mb-0 mt-0">Servicio</h3>
+                        <h1 class="title mt-0">REHABILITACIÓN POST-QUIRÚRGICA</h1>
+                        <p>Volver a la normalidad tras una cirugía es indispensable para el paciente. Habana Salud
+                          Center ofrece programas de
+                          rehabilitación para garantizar el mayor éxito del proceso.</p>
+                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una cita</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab13">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="service-content">
+                        <h3 class="sub-title mb-0 mt-0">Servicio</h3>
+                        <h1 class="title mt-0">FISIOTERAPIA MUSCULAR</h1>
+                        <p>Los problemas musculares son una de las principales causas que provocan en los deportistas y
+                          no deportistas una pérdida
+                          parcial o total de su actividad y, por lo tanto, una limitación en la progresión de su
+                          rendimiento deportivo y/o
+                          actividad física. Por esta razón Habana Salud Center atiende este tipo de lesiones a cargo de
+                          excelentes especialistas</p>
+
+                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una cita</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab14">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="service-content">
+                        <h3 class="sub-title mb-0 mt-30">Servicio</h3>
+                        <h1 class="title mt-0">FISIOTERAPIA NEUROLÓGICA</h1>
+                        <p>En la fisioterapia neurológica se realizan un conjunto de procedimientos que ayudan a
+                          resolver ciertas afectaciones del
+                          sistema nervioso tanto central como periférico, con el fin de educarlos o reeducarlos en el
+                          aspecto motor (movimiento)
+                          para adaptarlos y/o reintegrarlos en la medida de lo posible, en sus actividades cotidianas,
+                          dependiendo de su
+                          padecimiento.</p>
+                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una cita</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab15">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="service-content">
+                        <h3 class="sub-title mb-0 mt-0">Servicio</h3>
+                        <h1 class="title mt-0">KINESIOTERAPIA</h1>
+                        <p>También ofrecemos terapias de movimiento para disminuir su discapacidad, aprovechar su
+                          rendimiento laboral y mejorar las
+                          capacidades físicas motoras en la actividad deportiva.</p>
+                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una cita</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Doctors -->
+  <section class="divider">
+    <div class="container-fluid p-0">
+      <div class="section-content p-90 p-sm-10">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="maxwidth600 mt-sm-50 mb-sm-50">
+              <div class="item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="team-thum">
+                      <img src="/assets/images/dr_jose_ines.png" alt="DRJOSEINES" aria-label="JoseInesImagen">
+                    </div>
+                  </div>
+                  <div class="col-md-6 pl-60 pt-40 pl-sm-15">
+                    <h1 class="team-name mt-0 text-white">Dr. José Inés Hernández Blanco</h1>
+                    <h5 class="team-subtitle text-theme-colored">Médico Especialista en Medicina Deportiva y
+                      Rehabilitación Física</h5>
+                    <p class="team-description">Médico graduado de la Universidad de la Habana, Cuba. Especialista en
+                      Medicina Física y Rehabilitación, Medicina
+                      Deportiva y Medicina General Integral. Máster en Medicina Bioenergética y Natural en la Atención
+                      Primaria de la Salud.
+                      30 años de experiencia.
+                      Profesor de la Universidad Autónoma de Querétaro.
+                      Cédula profesional número 09282157</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Form And Testimonials -->
+  <section>
+    <div class="container-fluid pt-0 pb-0">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-uppercase text-center">Nuestro clientes opinan</h2>
+        </div>
+        <div class="col-md-12 p-60 pb-40 pt-70 layer-overlay overlay-deep">
+          <div class="testimonial style1 testimonial-carousel-2col">
+            <div class="item">
+              <div class="comment">
+                <p>Recomiendo ampliamente a Habana Salud Center. El lugar es céntrico, el precio accesible. Tienen
+                  terapias interesantes y
+                  el personal es muy amable..</p>
+              </div>
+              <div class="content mt-20">
+                <div class="thumb pull-right">
+                  <img class="img-circle" alt="" src="/assets/images/peoples/rodrigo_campos.png">
+                </div>
+                <div class="patient-details text-right pull-right mr-20 mt-10">
+                  <h5 class="author">Rodrigo Campos</h5>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="comment">
+                <p>Habana Salud Center nos dio muy buen trato. Me gustó la calidad de servicio. Gracias al Dr. José
+                  Inés, mi hija ya está
+                  mucho mejor, tras terminar las sesiones del golpe que se llevó en la mano. ¡Ahora está lista para las
+                  siguientes
+                  competencias!.</p>
+              </div>
+              <div class="content mt-20">
+                <div class="thumb pull-right">
+                  <img class="img-circle" alt="" src="/assets/images/peoples/diana_navarro-1.png">
+                </div>
+                <div class="patient-details text-right pull-right mr-20 mt-10">
+                  <h5 class="author">Diana Navarro</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 p-60 pb-40 pt-70 layer-overlay overlay-deep">
+          <div class="testimonial style1 testimonial-carousel-2col">
+            <div class="item">
+              <div class="comment">
+                <p>El servicio en Habana Salud Center es excelente. La atención médica es muy buena. 100% recomendable.
+                  ¡Ya no vivas con
+                  ese dolor!</p>
+              </div>
+              <div class="content mt-20">
+                <div class="thumb pull-right">
+                  <img class="img-circle" alt="" src="/assets/images/peoples/paloma_hernandez.png">
+                </div>
+                <div class="patient-details text-right pull-right mr-20 mt-10">
+                  <h5 class="author">Paloma Hernández</h5>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="comment">
+                <p>Excelente trabajo el que han hecho. ¡Gracias por rehabilitar mi rodilla! Habana Salud Center me ha
+                  ayudado a seguir mi
+                  preparación como Atleta.</p>
+              </div>
+              <div class="content mt-20">
+                <div class="thumb pull-right">
+                  <img class="img-circle" alt="" src="/assets/images/peoples/elizabeth_gonzalez.png">
+                </div>
+                <div class="patient-details text-right pull-right mr-20 mt-10">
+                  <h5 class="author">Elizabeth González</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Gallery -->
+  <section class="bg-lighter">
+    <div class="container pb-0">
+      <div class="section-title text-center">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h2 class="text-uppercase mt-0 text-white">Nuestras instalaciones</h2>
+            <div class="title-icon">
+              <img class="mb-10" src="images/title-icon.png" alt="">
+            </div>
+            <p class="text-white">Ofrecemos tratamiento personalizado. Nuestra sala de rehabilitación nos permite
+              atender a cada paciente
+              que acude a la
+              institución de forma programada, cumpliendo con todos los requisitos de ética médica (privacidad, trato
+              digno y
+              calidad).</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Works Filter -->
+          <div class="portfolio-filter font-alt align-center">
+            <a href="#" class="active" data-filter="*">Instalaciones</a>
+          </div>
+          <!-- End Works Filter -->
+
+          <!-- Portfolio Gallery Grid -->
+          <div id="grid" class="gallery-isotope grid-4 gutter clearfix">
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item dental">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/600x400"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item photography">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item photography">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item photography">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item surgery">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item photography">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item laboratory">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item photography">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item dental">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item photography">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item laboratory">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+            <!-- Portfolio Item Start -->
+            <div class="gallery-item surgery">
+              <div class="thumb">
+                <img class="img-fullwidth" src="http://placehold.it/280x190" alt="project">
+                <div class="overlay-shade"></div>
+                <div class="icons-holder">
+                  <div class="icons-holder-inner">
+                    <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
+                      <a data-lightbox="image" href="http://placehold.it/280x190"><i class="fa fa-picture-o"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio Item End -->
+
+          </div>
+          <!-- End Portfolio Gallery Grid -->
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- end main-content -->
