@@ -68,3 +68,6 @@ theme. But don't modify style-main.css file.
     background-color: #005593;
     color: white;
 }
+.mt-50 {
+    margin-top: 50px;
+}
