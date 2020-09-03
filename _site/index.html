@@ -35,12 +35,12 @@
 
         <link href="/assets/css/colors/theme-skin-blue.css" rel="stylesheet" type="text/css">
         <!-- external javascripts -->
-        <script src="/assets/js/jquery-2.2.0.min.js">
+        <script defer="defer" src="/assets/js/jquery-2.2.0.min.js">
             <!-- css | theme color -->
         </script>
-        <script src="/assets/js/bootstrap.min.js"></script>
+        <script defer="defer" src="/assets/js/bootstrap.min.js"></script>
         <!-- JS | jquery plugin collection for this theme -->
-        <script src="/assets/js/jquery-plugin-collection.js"></script>
+        
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,88 +48,7 @@
     </head>
     <body class="has-side-panel side-panel-right fullwidth-page side-push-panel">
         <div class="body-overlay"></div>
-        <div id="side-panel" class="dark" data-bg-img="http://placehold.it/1920x1280">
-            <div class="side-panel-wrap">
-                <div id="side-panel-trigger-close" class="side-panel-trigger">
-                    <a href="#">
-                        <i class="icon_close font-30"></i>
-                    </a>
-                </div>
-                <a href="javascript:void(0)"><img alt="logo" src="/assets/images/logo-wide.png"></a>
-                <div class="side-panel-nav mt-30">
-                    <div class="widget no-border">
-                        <nav>
-                            <ul class="nav nav-list">
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">Services</a>
-                                </li>
-                                <li>
-                                    <a class="tree-toggler nav-header">Pages
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                    <ul class="nav nav-list tree">
-                                        <li>
-                                            <a href="#">About</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Terms</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">FAQ</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Contact</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <div class="side-panel-widget mt-30">
-                    <div class="widget no-border">
-                        <ul>
-                            <li class="font-14 mb-5">
-                                <i class="fa fa-phone text-theme-colored"></i>
-                                <a href="#" class="text-gray">123-456-789</a>
-                            </li>
-                            <li class="font-14 mb-5">
-                                <i class="fa fa-clock-o text-theme-colored"></i>
-                                Mon-Fri 8:00 to 2:00
-                            </li>
-                            <li class="font-14 mb-5">
-                                <i class="fa fa-envelope-o text-theme-colored"></i>
-                                <a href="#" class="text-gray">contact@yourdomain.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="widget">
-                        <ul class="social-icons icon-dark icon-theme-colored icon-sm">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <p>Copyright &copy;2016 ThemeMascot</p>
-                </div>
-            </div>
-        </div>
+
         <div id="wrapper" class="clearfix">
 
             <!-- Header -->
@@ -170,7 +89,7 @@
                                         </li>
                                         <li class="sm-display-block mt-sm-10 mb-sm-10">
                                             <!-- Modal: Appointment Starts -->
-                                            <a class="bg-light text-white p-5 text-theme-colored font-11 pl-10 pr-10" data-toggle="modal" data-target="#BSParentModal" href="ajax-load/form-appointment.html">Haz cita</a>
+                                            <a class="bg-light text-white p-5 text-theme-colored font-11 pl-10 pr-10" href="https://wa.me/524423183749/?text=Hola%20quisiera%20agendar%20una%20cita%20para%20el%20dia">Haz cita</a>
                                             <!-- Modal: Appointment End -->
                                         </li>
                                     </ul>
@@ -184,13 +103,8 @@
                         <div class="container">
                             <nav id="menuzord-right" class="menuzord blue bg-lightest">
                                 <a class="menuzord-brand pull-left flip" href="javascript:void(0)">
-                                    <img src="/assets/images/logo.jpeg" alt="">
+                                    <img src="/assets/images/logo_header.jpeg" alt="LOGO_HASACE">
                                 </a>
-                                <div id="side-panel-trigger" class="side-panel-trigger">
-                                    <a href="/">
-                                        <i class="fa fa-bars font-24 text-gray"></i>
-                                    </a>
-                                </div>
                                 <ul class="menuzord-menu">
                                     <li class="active">
                                         <a href="/">Inicio</a>
@@ -201,6 +115,26 @@
                                     </li>
                                     <li>
                                         <a href="/servicios">Servicios Médicos</a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a href="/servicios/fisioterapia-muscular">Fisioterapia muscular</a>
+                                            </li>
+                                            <li>
+                                                <a href="/servicios/fisioterapia-neurologica">Fisioterapia Neurológica</a>
+                                            </li>
+                                            <li>
+                                                <a href="/servicios/kinesioterapia">Kinesioterapia</a>
+                                            </li>
+                                            <li>
+                                                <a href="/servicios/rehabilitacion-fisica">Rehabilitacion física</a>
+                                            </li>
+                                            <li>
+                                                <a href="/servicios/rehabilitacion-post-quirurgica">Rehabilitacion post-quirurgica</a>
+                                            </li>
+                                            <li>
+                                                <a href="/servicios/otros">Otros</a>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <a href="/citas">Citas</a>
@@ -265,8 +199,8 @@
             </div>
             <h5 class="mt-30"><i class="fa fa-pencil-square-o text-theme-colored"></i> Necesitas ayuda?</h5>
             <p class="mt-0 text-uppercase">haz tu cita y nuestros expertos te atenderán</p>
-            <a href="#" class="btn btn-dark btn-theme-colored mt-15" data-toggle="modal"
-              data-target="#modal_appontment_form_at_about">Pedir Cita</a>
+            <a href="https://wa.me/524423183749/?text=Hola%20quisiera%20agendar%20una%20cita%20para%20el%20dia"
+              class="btn btn-dark btn-theme-colored mt-15">Pedir Cita</a>
 
             <!-- Modal - Appontment Form Starts -->
             <div class="modal fade" id="modal_appontment_form_at_about" tabindex="-1" role="dialog"
@@ -359,7 +293,7 @@
           <a href="/quienes-somos" class="btn btn-primary btn-lg mt-15 mb-md-30">Quiero saber más</a>
         </div>
         <div class="col-md-4 wow fadeInRight animation-delay4">
-          <img src="/assets/images/dr_jose_ines.png" alt="DrJoseInes">
+          <img src="/assets/images/dr_jose_ines.jpg" alt="DrJoseInes">
         </div>
       </div>
     </div>
@@ -426,7 +360,8 @@
         </div>
         <div class="col-md-5">
           <div class="thumb">
-            <img alt="" src="/assets/images/rehabilitacion_fisica_en_queretaro.png" class="img-fullwidth">
+            <img alt="" src="/assets/images/rehabilitacion_fisica_en_queretaro.png" class="img-fullwidth"
+              loading="lazy">
           </div>
         </div>
       </div>
@@ -481,7 +416,9 @@
                           y mantengan un nivel óptimo de desempeño físico, sensorial, psicológico y/o social,
                           manteniendo una adecuada calidad de
                           vida.</p>
-                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una Cita</a>
+                        <a class="btn btn-lg btn-dark btn-theme-colored"
+                          href="https://wa.me/524423183749/?text=Hola%20quisiera%20agendar%20una%20cita%20para%20el%20dia">Quiero
+                          una Cita</a>
                       </div>
                     </div>
                   </div>
@@ -495,7 +432,9 @@
                         <p>Volver a la normalidad tras una cirugía es indispensable para el paciente. Habana Salud
                           Center ofrece programas de
                           rehabilitación para garantizar el mayor éxito del proceso.</p>
-                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una cita</a>
+                        <a class="btn btn-lg btn-dark btn-theme-colored"
+                          href="https://wa.me/524423183749/?text=Hola%20quisiera%20agendar%20una%20cita%20para%20el%20dia">Quiero
+                          una cita</a>
                       </div>
                     </div>
                   </div>
@@ -513,7 +452,9 @@
                           actividad física. Por esta razón Habana Salud Center atiende este tipo de lesiones a cargo de
                           excelentes especialistas</p>
 
-                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una cita</a>
+                        <a class="btn btn-lg btn-dark btn-theme-colored"
+                          href="https://wa.me/524423183749/?text=Hola%20quisiera%20agendar%20una%20cita%20para%20el%20dia">Quiero
+                          una cita</a>
                       </div>
                     </div>
                   </div>
@@ -545,7 +486,9 @@
                         <p>También ofrecemos terapias de movimiento para disminuir su discapacidad, aprovechar su
                           rendimiento laboral y mejorar las
                           capacidades físicas motoras en la actividad deportiva.</p>
-                        <a class="btn btn-lg btn-dark btn-theme-colored" href="#">Quiero una cita</a>
+                        <a class="btn btn-lg btn-dark btn-theme-colored"
+                          href="https://wa.me/524423183749/?text=Hola%20quisiera%20agendar%20una%20cita%20para%20el%20dia">Quiero
+                          una cita</a>
                       </div>
                     </div>
                   </div>
@@ -569,7 +512,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="team-thum">
-                      <img src="/assets/images/dr_jose_ines.png" alt="DRJOSEINES" aria-label="JoseInesImagen">
+                      <img src="/assets/images/dr_jose_ines.jpg" alt="DRJOSEINES" aria-label="JoseInesImagen">
                     </div>
                   </div>
                   <div class="col-md-6 pl-60 pt-40 pl-sm-15">
@@ -599,7 +542,7 @@
         <div class="col-md-12">
           <h2 class="text-uppercase text-center">Nuestro clientes opinan</h2>
         </div>
-        <div class="col-md-12 p-60 pb-40 pt-70 layer-overlay overlay-deep">
+        <div class="col-md-12 layer-overlay overlay-deep">
           <div class="testimonial style1 testimonial-carousel-2col">
             <div class="item">
               <div class="comment">
@@ -609,7 +552,7 @@
               </div>
               <div class="content mt-20">
                 <div class="thumb pull-right">
-                  <img class="img-circle" alt="" src="/assets/images/peoples/rodrigo_campos.png">
+                  <img class="img-circle" alt="" loading="lazy" src="/assets/images/peoples/rodrigo_campos.png">
                 </div>
                 <div class="patient-details text-right pull-right mr-20 mt-10">
                   <h5 class="author">Rodrigo Campos</h5>
@@ -626,7 +569,7 @@
               </div>
               <div class="content mt-20">
                 <div class="thumb pull-right">
-                  <img class="img-circle" alt="" src="/assets/images/peoples/diana_navarro-1.png">
+                  <img class="img-circle" alt="" loading="lazy" src="/assets/images/peoples/diana_navarro-1.png">
                 </div>
                 <div class="patient-details text-right pull-right mr-20 mt-10">
                   <h5 class="author">Diana Navarro</h5>
@@ -647,7 +590,7 @@
               </div>
               <div class="content mt-20">
                 <div class="thumb pull-right">
-                  <img class="img-circle" alt="" src="/assets/images/peoples/paloma_hernandez.png">
+                  <img class="img-circle" alt="" loading="lazy" src="/assets/images/peoples/paloma_hernandez.png">
                 </div>
                 <div class="patient-details text-right pull-right mr-20 mt-10">
                   <h5 class="author">Paloma Hernández</h5>
@@ -662,7 +605,7 @@
               </div>
               <div class="content mt-20">
                 <div class="thumb pull-right">
-                  <img class="img-circle" alt="" src="/assets/images/peoples/elizabeth_gonzalez.png">
+                  <img class="img-circle" alt="" loading="lazy" src="/assets/images/peoples/elizabeth_gonzalez.png">
                 </div>
                 <div class="patient-details text-right pull-right mr-20 mt-10">
                   <h5 class="author">Elizabeth González</h5>
@@ -707,13 +650,18 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item dental">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen1.jpg" alt="project">
+                <picture>
+                  <source srcset="/assets/images/galeria/imagen1.webp" type="image/webp">
+                  <source srcset="/assets/images/galeria/imagen1.jpg" type="image/jpeg">
+                  <img class="img-fullwidth" width="" loading="lazy" loading="lazy"
+                    src="/assets/images/galeria/imagen1.jpg" alt="project">
+                </picture>
+
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen1.jpg"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen1.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -724,13 +672,12 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item photography">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen2.jpg" alt="project">
+                <img class="img-fullwidth" loading="lazy" src="/assets/images/galeria/imagen2.jpg" alt="project">
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen2.jpg"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen2.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -741,13 +688,12 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item photography">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen3.jpg" alt="project">
+                <img class="img-fullwidth" loading="lazy" src="/assets/images/galeria/imagen9.jpg" alt="project">
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen3.jpg"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen9.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -758,13 +704,12 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item photography">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen4.jpg" alt="project">
+                <img class="img-fullwidth" loading="lazy" src="/assets/images/galeria/imagen4.jpg" alt="project">
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen4.jpg"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen4.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -775,13 +720,12 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item surgery">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen5.jpg" alt="project">
+                <img class="img-fullwidth" loading="lazy" src="/assets/images/galeria/imagen5.jpg" alt="project">
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen5.jpg"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen5.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -791,13 +735,12 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item surgery">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen6.jpg" alt="project">
+                <img class="img-fullwidth" loading="lazy" src="/assets/images/galeria/imagen6.jpg" alt="project">
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen6.jpg"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen6.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -807,13 +750,12 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item surgery">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen7.jpg" alt="project">
+                <img class="img-fullwidth" loading="lazy" src="/assets/images/galeria/imagen10.jpg" alt="project">
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen7.jpg"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen10.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -823,13 +765,12 @@
             <!-- Portfolio Item Start -->
             <div class="gallery-item surgery">
               <div class="thumb">
-                <img class="img-fullwidth" src="/assets/images/galeria/imagen8.png" alt="project">
+                <img class="img-fullwidth" loading="lazy" src="/assets/images/galeria/imagen8.jpg" alt="project">
                 <div class="overlay-shade"></div>
                 <div class="icons-holder">
                   <div class="icons-holder-inner">
                     <div class="social-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                      <a data-lightbox="image" href="/assets/images/galeria/imagen.png"><i
-                          class="fa fa-picture-o"></i></a>
+                      <a target="_blank" href="/assets/images/galeria/imagen8.jpg"><i class="fa fa-picture-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -872,7 +813,7 @@
                                     <div class="media-body">
                                         <h4 class="media-heading heading title">Citas</h4>
                                         <p>Contáctenos y con gusto le ayudamos.
-                                            <a href="#">
+                                            <a href="https://wa.me/524423183749/?text=Hola%20quisiera%20agendar%20una%20cita%20para%20el%20dia">
                                                 <i class="fa fa-arrow-circle-right font-14"></i>
                                             </a>
                                         </p>
@@ -997,17 +938,6 @@
         <!-- Footer Scripts -->
         <!-- JS | Custom script for all pages -->
         <script src="/assets/js/custom.js"></script>
-
-        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS (Load Extensions only on Local File Systems ! The following part can be removed on Server for On Demand Loading) -->
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
-        <script type="text/javascript" src="/assets/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
 
     </body>
 </html>

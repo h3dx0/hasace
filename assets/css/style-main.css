@@ -2059,7 +2059,17 @@ section>.container-fluid {
 }
 
 .menuzord-brand img {
-  max-height: 38px;
+  max-height: 85px;
+}
+
+.menuzord-brand {
+  margin: 5px 0;
+}
+
+#menuzord-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media only screen and (max-width: 767px) {
@@ -3493,6 +3503,8 @@ form .error {
 
 /* -------- Portfolio Isotop Gallery ---------- */
 .gallery-isotope {
+  display: flex;
+  flex-wrap: wrap;
   /*gutter*/
   /* by default 4 grids */
   /*portfolio 2 grids*/
@@ -7641,9 +7653,18 @@ blockquote p {
  * Shortcode: Testimonials.less
  * -----------------------------------------------
 */
+.testimonial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .testimonial .item {
   position: relative;
   overflow: hidden;
+  width: 45%;
+  margin: 0 10px;
 }
 
 .testimonial .item .thumb img {
