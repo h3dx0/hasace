@@ -2072,11 +2072,7 @@ section>.container-fluid {
   align-items: center;
 }
 
-@media only screen and (max-width: 767px) {
-  .menuzord-brand img {
-    max-height: 30px;
-  }
-}
+@media only screen and (max-width: 767px) {}
 
 /* -------- Inner Header ---------- */
 .inner-header .title {

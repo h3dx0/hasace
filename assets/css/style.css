@@ -8,25 +8,31 @@ theme. But don't modify style-main.css file.
 */
 
 /* Your custom css codes start here: */
+.btn-menu {
+    display: none;
+}
+
 .slider_wrapper {
-    /* background-image: url('/assets/images/portada_dr_jose.png');*/
+    background-image: url('/assets/images/imagen5.jpg');
     width: 100%;
-    height: 350px;
-    background-image: radial-gradient(#005593, #1d6ba3);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 350px;
 }
+
 
 .slider-titles {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: left;
+    text-align: center;
     width: 100%;
+
 }
 
 .slider-text-secondary {
