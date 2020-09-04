@@ -9,13 +9,12 @@ theme. But don't modify style-main.css file.
 
 /* Your custom css codes start here: */
 .slider_wrapper {
-    background-image: url('/assets/images/portada_dr_jose.png');
+    /* background-image: url('/assets/images/portada_dr_jose.png');*/
     width: 100%;
-    height: 550px;
-    /* background-image: linear-gradient(#005593, #005593); */
-    background-color: #528ab3;
+    height: 350px;
+    background-image: radial-gradient(#005593, #1d6ba3);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center right;
     display: flex;
     align-items: center;
@@ -25,11 +24,9 @@ theme. But don't modify style-main.css file.
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     text-align: left;
-    height: 100%;
-    width: 40%;
-    margin-left: 20%;
+    width: 100%;
 }
 
 .slider-text-secondary {
@@ -68,6 +65,88 @@ theme. But don't modify style-main.css file.
     background-color: #005593;
     color: white;
 }
+
 .mt-50 {
     margin-top: 50px;
+}
+
+/*Dropdown header*/
+.dropdown-item:hover .dropdown-content {
+    display: block;
+}
+
+.inner-header {
+    background-image: url('/assets/images/header_hasace.png');
+}
+
+/*
+Boxed Skin
+*/
+
+/* Menu items */
+.menuzord-menu>li {
+    padding: 18px 0;
+}
+
+.menuzord-menu>li>a {
+    padding: 8px 16px;
+}
+
+/* Active/hover state (menu items) */
+.menuzord-menu>li.active>a,
+.menuzord-menu>li:hover>a {
+    background: #333;
+    color: #fff;
+}
+
+/* Dropdown */
+.menuzord-menu ul.dropdown {
+    top: 71px;
+}
+
+.menuzord-menu ul.dropdown li ul.dropdown {
+    top: 0;
+}
+
+/* Dropdown items */
+.menuzord .menuzord-menu ul.dropdown li:hover>a {
+    background: #333;
+    color: #fff;
+}
+
+/* Megamenu */
+.menuzord-menu>li>.megamenu {
+    top: 71px;
+}
+
+/* Search Field */
+.menuzord-menu>li.search form {
+    padding: 2px 16px;
+}
+
+/* Color schemes */
+/* blue */
+.menuzord.blue .menuzord-menu>li.active>a,
+.menuzord.blue .menuzord-menu>li:hover>a,
+.menuzord.blue .menuzord-menu ul.dropdown li:hover>a {
+    background: #5D9CEC;
+    color: #fff;
+}
+
+
+/* Mobile mode (Responsive mode) */
+@media (max-width: 900px) {
+
+    /* Menu items */
+    .menuzord-responsive .menuzord-menu>li {
+        padding: 0;
+    }
+
+    .menuzord-responsive .menuzord-menu>li>a {
+        padding: 12px 20px !important;
+    }
+}
+
+.scrollToTop {
+    display: block;
 }
